@@ -32,10 +32,11 @@ const initialState: ProductState = {
 
 export const fetchProducts = createAsyncThunk<Product[]>("products/fetchAll", async () => {
     try {
-        const response = await fetch('https://singhagency-backened.onrender.com/SinghAgencies/fetchAllProducts');
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL_HEADER}/SinghAgencies/fetchAllProducts`);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
+       
         const data = await response.json();
         return data;
     } catch (error: any) {
@@ -45,7 +46,7 @@ export const fetchProducts = createAsyncThunk<Product[]>("products/fetchAll", as
 
 export const fetchSpecificProduct = createAsyncThunk<{message:string,product:Product}, string>("products/specificProduct", async (productId: string) => {
     try {
-        const response = await fetch(`https://singhagency-backened.onrender.com/SinghAgencies/fetchSpecificProductData/${productId}`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL_HEADER}/SinghAgencies/fetchSpecificProductData/${productId}`);
         const data = await response.json();
         return data;
     } catch (error: any) {

@@ -46,7 +46,7 @@ const initialState: AuthState = {
 
 export const getUserDetails = createAsyncThunk('auth/getUserDetails', async () => {
   try {
-    const response = await fetch('https://singhagency-backened.onrender.com/SinghAgencies/getLogedInUserDetail', {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL_HEADER}/SinghAgencies/getLogedInUserDetail`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ export const getUserDetails = createAsyncThunk('auth/getUserDetails', async () =
 
 export const registerUser = createAsyncThunk<AuthResponse, RegisterUserParams>('auth/registerUser', async ({ Name, Email, Password, ContactNumber, navigate }: RegisterUserParams) => {
   try {
-    const response = await fetch('https://singhagency-backened.onrender.com/SinghAgencies/CreateUser', {
+    const response = await fetch( `${process.env.NEXT_PUBLIC_API_URL_HEADER}/SinghAgencies/CreateUser`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ export const registerUser = createAsyncThunk<AuthResponse, RegisterUserParams>('
 
 export const logInUser = createAsyncThunk<AuthResponse, LoginUserParams>('auth/logInUser', async ({ Email, Password, navigate }: LoginUserParams) => {
   try {
-    const response = await fetch('https://singhagency-backened.onrender.com/SinghAgencies/Login', {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL_HEADER}/SinghAgencies/Login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

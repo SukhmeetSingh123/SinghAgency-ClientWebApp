@@ -33,7 +33,7 @@ const initialState: OrderState = {
 
 export const fetchOrders = createAsyncThunk<OrderItem>("Orders/fetchOrders", async () => {
   try {
-    const response = await fetch('https://singhagency-backened.onrender.com/SinghAgencies/fetchOrders', {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL_HEADER}/SinghAgencies/fetchOrders`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ export const fetchOrders = createAsyncThunk<OrderItem>("Orders/fetchOrders", asy
 
 export const addOrder = createAsyncThunk<OrderResponse, { ProductId: string, Quantity: number }>("orders/addOrder", async ({ ProductId, Quantity }) => {
   try {
-    const response = await fetch('https://singhagency-backened.onrender.com/SinghAgencies/newOrders', {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL_HEADER}/SinghAgencies/newOrders`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ export const addOrder = createAsyncThunk<OrderResponse, { ProductId: string, Qua
 
 export const deleteOrder = createAsyncThunk<OrderResponse, { orderId: string, productId: string }>("orders/deleteOrder", async ({ orderId, productId }) => {
   try {
-    const response = await fetch('https://singhagency-backened.onrender.com/SinghAgencies/deleteOrders', {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL_HEADER}/SinghAgencies/deleteOrders`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
