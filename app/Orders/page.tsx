@@ -86,7 +86,7 @@ const Page = () => {
               <div key={index} className="bg-white shadow-md rounded-lg p-4 w-full sm:w-3/4 flex flex-col items-start">
                 <div className="flex flex-col md:flex-row items-center w-full">
                   <img
-                    src={`https://singhagency-backened.onrender.com/${order.productDetail.item_Image}`}
+                    src={`data:image/jpeg;base64,${order.productDetail.item_Image}`}
                     alt={order.productDetail.item_Name}
                     className="w-16 h-16 rounded-full mr-4"
                   />

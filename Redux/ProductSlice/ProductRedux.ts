@@ -6,7 +6,7 @@ export type Product = {
     _id: string,
     item_Name: string,
     item_Price: number,
-    item_Image: any,
+    item_Image: string,
     item_Description: string,
     featured_Item: boolean,
 }

@@ -73,7 +73,6 @@ export const addOrder = createAsyncThunk<OrderResponse, { ProductId: string, Qua
 
 export const deleteOrder = createAsyncThunk<OrderResponse, { orderId: string, productId: string }>("orders/deleteOrder", async ({ orderId, productId }) => {
   try {
-    console.log("reached", productId,orderId)
     const response = await fetch('https://singhagency-backened.onrender.com/SinghAgencies/deleteOrders', {
       method: 'DELETE',
       headers: {

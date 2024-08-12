@@ -47,7 +47,7 @@ const ProductPage: React.FC = () => {
               <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer">
                 {product.item_Image && (
                   <img
-                    src={`https://singhagency-backened.onrender.com/${product.item_Image}`}
+                  src={`data:image/jpeg;base64,${product.item_Image}`}
                     alt={product.item_Name}
                     className="w-full h-64 object-cover"
                   />

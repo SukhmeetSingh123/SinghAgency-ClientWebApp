@@ -92,7 +92,7 @@ const Page = ({ params }: any) => {
           {product.item_Image && (
             <div className="w-full md:w-1/2 h-auto">
               <img
-                src={`https://singhagency-backened.onrender.com/${product.item_Image}`}
+                src={`data:image/jpeg;base64,${product.item_Image}`}
                 alt={product.item_Name}
                 className="w-full h-full object-contain"
               />

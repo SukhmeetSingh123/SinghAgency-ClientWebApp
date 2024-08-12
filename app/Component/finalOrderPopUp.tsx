@@ -8,7 +8,7 @@ const FinalOrderPopUp = ({ product, quantity, onClose, onOrder, alreadyAddedQuan
                 <div className="mb-4 flex flex-col items-center">
                     <div className="w-24 h-24 rounded-full overflow-hidden border border-gray-300 mb-4">
                         <img
-                            src={`https://singhagency-backened.onrender.com/${product.item_Image}`}
+                            src={`data:image/jpeg;base64,${product.item_Image}`}
                             alt={product.item_Name}
                             className="w-full h-full object-cover"
                         />
