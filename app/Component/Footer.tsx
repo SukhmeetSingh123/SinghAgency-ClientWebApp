@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-center md:text-left mb-4 md:mb-0">
-            <h2 className="text-2xl font-bold mb-2">Singh Agency</h2>
+            <h2 className="text-2xl font-bold mb-2">ShopSphere</h2>
             <p className="text-gray-400">
               Providing quality bolts and nuts for two-wheeler vehicles.
             </p>
@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
         <div className="text-gray-400">To Have Your Own WebSite Contact On :- +91 9116290699</div>
         <div className="text-center text-gray-500 mt-4">
-          &copy; {new Date().getFullYear()} Singh Agency. All rights reserved.
+          &copy; {new Date().getFullYear()} ShopSphere. All rights reserved.
         </div>
       </div>
     </footer>

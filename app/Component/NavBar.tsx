@@ -44,7 +44,7 @@ const NavBar = () => {
   return (
     <nav className="bg-gray-800 h-20 flex items-center p-0 m-0 relative">
       <div className="container mx-auto flex justify-between items-center h-full px-4">
-        <div className="text-2xl text-white font-medium italic ml-4">Singh Agency</div>
+        <div className="text-2xl text-white font-medium italic ml-4">ShopSphere</div>
         <div className="hidden md:flex space-x-4">
           <Link href="/">
             <div className="text-white hover:text-gray-400">Home</div>

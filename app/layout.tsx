@@ -9,8 +9,8 @@ import { Providers } from '../Redux/provider'
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Singh Agency",
-  description: "Singh Agency ",
+  title: "ShopSphere",
+  description: "ShopSphere ",
 };
 
 export default function RootLayout({
