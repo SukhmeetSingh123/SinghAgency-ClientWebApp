@@ -8,7 +8,7 @@ const MainPageContent = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="hero-section-data">
           <p className="text-lg font-semibold text-blue-600 mb-2">Welcome to</p>
-          <h2 className="text-6xl underline font-bold text-gray-800 mb-4">ShopSphere</h2>
+          <h2 className="text-3xl underline font-bold text-gray-800 mb-4">ShopSphere</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Welcome to <strong>SHOPSPHERE</strong>, the ultimate online marketplace for local shopkeepers!
             <br />
