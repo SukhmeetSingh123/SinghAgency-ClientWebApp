@@ -24,7 +24,7 @@ const page = () => {
             height="450"
             className="border-0 mt-4"
             loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
+            referrerPolicy="no-referrer-when-downgrade">
             </iframe>
 
             <Link href="/">
