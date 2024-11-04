@@ -4,12 +4,12 @@ import Link from 'next/link';
 
 const MainPageContent = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="container mx-auto px-6 py-10 lg:py-14">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div className="hero-section-data">
-          <p className="text-lg font-semibold text-blue-600 mb-2">Welcome to</p>
-          <h2 className="text-3xl underline font-bold text-gray-800 mb-4">ShopSphere</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-lg font-semibold text-blue-500 mb-2">Welcome to</p>
+          <h2 className="text-4xl font-bold text-gray-800 mb-6 underline underline-offset-4">ShopSphere</h2>
+          <p className="text-gray-700 leading-relaxed mb-6">
             Welcome to <strong>SHOPSPHERE</strong>, the ultimate online marketplace for local shopkeepers!
             <br />
             We are proud to provide a platform where local businesses can showcase and sell their products to a wider audience, making it easier for you to shop from the comfort of your home.
@@ -23,40 +23,20 @@ const MainPageContent = () => {
             Thank you for choosing <strong>SHOPSPHERE</strong> — your one-stop shop for local products!
           </p>
 
-          {/* <div className="mb-4">
-            <p className="text-lg font-semibold">Contact Us :</p>
-            <p className="text-gray-700">+91 9116290699</p>
-            <p className="text-gray-700">+91 9519347728</p>
-          </div> */}
-
           <Link href="/Products">
-            <div className="inline-block bg-blue-600 text-white text-lg font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-300">Shop Now</div>
+            <div className="inline-block  text-black border border-black text-lg font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-400 transition-all duration-300 ease-in-out transform hover:scale-105">
+              Shop Now
+            </div>
           </Link>
         </div>
-        {/* <div className="hero-section-image">
-          <figure className="flex justify-center items-center">
-            <Image
-              src="/assets/HeaderImage.jpg"
-              alt="Header Image"
-              className="object-cover rounded-md"
-              width={500}
-              height={300}
-            />
-          </figure>
-        </div> */}
-
 
         <div className="hero-section-image">
           <figure className="flex justify-center items-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl w-full h-80 shadow-lg">
-            <p className="text-white text-5xl font-cursive tracking-wider drop-shadow-lg">
+            <p className="text-white text-6xl font-bold italic tracking-wide drop-shadow-lg">
               SHOPSPHERE
             </p>
           </figure>
         </div>
-
-
-
-
       </div>
     </div>
   );

@@ -16,8 +16,8 @@ const Page = ({ params }: any) => {
   const { isLoggedIn } = useSelector((state: RootState) => state.auth);
   const [product, setProduct] = useState<any>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [quantity, setQuantity] = useState(1); // Default quantity
-  const [alreadyAddedQuantity, setAlreadyAddedQuantity] = useState(0); // Default quantity
+  const [quantity, setQuantity] = useState(1);
+  const [alreadyAddedQuantity, setAlreadyAddedQuantity] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const Page = ({ params }: any) => {
       dispatch(fetchSpecificProduct(params.id as string));
       dispatch(fetchOrders());
     }
-  }, [params.id,dispatch]);
+  }, [params.id, dispatch]);
 
   useEffect(() => {
     if (specificProduct) {
@@ -39,7 +39,7 @@ const Page = ({ params }: any) => {
     } else {
       if (Orders?.filteredResponse) {
         const existingOrder = Orders.filteredResponse.find(order => order.productDetail._id === params.id);
-         if (existingOrder) {
+        if (existingOrder) {
           setAlreadyAddedQuantity(existingOrder.Quantity);
         } else {
           setAlreadyAddedQuantity(0);
@@ -77,24 +77,24 @@ const Page = ({ params }: any) => {
 
   return (
     <>
-     {showAlert && (
-        <div className="fixed top-4 left-1/2 transform -translate-x-1/2  bg-green-500 text-white px-4 py-2 rounded-md shadow-md">
+      {showAlert && (
+        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded-md shadow-md">
           Order Placed Successfully
         </div>
       )}
       <Link href="/Products">
-        <div className="inline-block bg-blue-600 text-white text-lg font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-300 ml-2 mt-2">
+        <div className="inline-block text-black border border-black text-lg font-semibold py-2 px-4 rounded-md hover:bg-gray-400 transition-colors duration-300 ml-2 mt-2">
           &lt;-- More Products
         </div>
       </Link>
       <div className="container mx-auto px-4 py-8 flex flex-col items-center min-h-screen">
         <div className="bg-white shadow-lg rounded-lg overflow-hidden max-w-6xl w-full flex flex-col md:flex-row items-center">
           {product.item_Image && (
-            <div className="w-full md:w-1/2 h-auto">
+            <div className="w-full md:w-1/2 h-auto flex justify-center items-center">
               <img
                 src={`data:image/jpeg;base64,${product.item_Image}`}
                 alt={product.item_Name}
-                className="w-full h-full object-contain"
+                className="w-full h-auto max-h-96 object-cover"
               />
             </div>
           )}
@@ -104,19 +104,19 @@ const Page = ({ params }: any) => {
             <p className="text-gray-700 mb-4">{product.item_Description}</p>
             <div className="flex items-center mb-4">
               <div
-                className={`w-4 h-4 rounded-full mr-2 ${product.featured_Item ? "bg-green-500" : ""}`}
+                className={`w-4 h-4 rounded-full mr-2 ${product.featured_Item ? "bg-green-500" : "bg-red-500"}`}
               ></div>
               <p className="text-gray-600">
-                {product.featured_Item ? "Featured : Yes" : ""}
+                {product.featured_Item ? "Featured: Yes" : "Featured: No"}
               </p>
             </div>
           </div>
         </div>
         <div className="mt-6 flex flex-col items-center">
           <div className="flex items-center mb-4">
-            <button onClick={decreaseQuantity} className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400">-</button>
-            <span className="mx-4 text-xl">{quantity}</span>
-            <button onClick={increaseQuantity} className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400">+</button>
+            <button onClick={decreaseQuantity} className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 transition duration-200">-</button>
+            <span className="mx-4 text-xl font-semibold">{quantity}</span>
+            <button onClick={increaseQuantity} className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 transition duration-200">+</button>
           </div>
           <button onClick={handleOrderNowButton}>
             <div className="inline-block bg-blue-600 text-white text-sm md:text-lg font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-300">
@@ -134,7 +134,6 @@ const Page = ({ params }: any) => {
           onOrder={handleOrder}
         />
       )}
-     
     </>
   );
 };

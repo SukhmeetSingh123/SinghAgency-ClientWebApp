@@ -22,12 +22,13 @@ const ProductPage: React.FC = () => {
   if (isLoading) return <div className="text-center p-4">Loading...</div>;
   if (isError) return <div className="text-center p-4 text-red-500">Error loading products</div>;
   if (!Product) return <div className="text-center p-4">No Item Currently Present ..</div>;
+
   return (
     <div className="p-4 max-w-screen-xl mx-auto">
       <div className="flex flex-col md:flex-row items-start md:items-center md:space-x-4 mb-8">
         <Link href="/">
-          <div className="inline-block bg-blue-600 text-white text-sm md:text-lg font-semibold py-1 md:py-2 px-2 md:px-4 rounded-md hover:bg-blue-700 transition-colors duration-300 mb-2 md:mb-0">
-            &lt;-- Go Back To Home
+          <div className="inline-block  text-black border border-black text-sm md:text-lg font-semibold py-1 md:py-2 px-2 md:px-4 rounded-md hover:bg-gray-400 transition-colors duration-300 mb-2 md:mb-0">
+            &lt;
           </div>
         </Link>
         <input
@@ -44,17 +45,23 @@ const ProductPage: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredProducts.map((product: Product) => (
             <Link key={product._id} href={`/Products/${product._id}`}>
-              <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer">
+              <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer hover:shadow-2xl hover:bg-gray-100">
                 {product.item_Image && (
                   <img
-                  src={`data:image/jpeg;base64,${product.item_Image}`}
+                    src={`data:image/jpeg;base64,${product.item_Image}`}
                     alt={product.item_Name}
                     className="w-full h-64 object-cover"
                   />
                 )}
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold truncate">{product.item_Name}</h3>
-                  <p className="text-gray-800 font-bold">₹{product.item_Price}</p>
+                <div className="p-4 space-y-2">
+                  <h3 className="text-lg font-semibold truncate text-gray-900">{product.item_Name}</h3>
+                  <p className="text-gray-600 text-sm truncate">{product.item_Description}</p>
+                  <div className="flex items-center justify-between mt-10">
+                    <span className="text-gray-900 font-bold text-lg">₹{product.item_Price}</span>
+                    <button className="px-3 py-1 bg-gray-900 text-white rounded-md text-sm hover:bg-gray-700 transition-colors duration-300">
+                      View Details
+                    </button>
+                  </div>
                 </div>
               </div>
             </Link>

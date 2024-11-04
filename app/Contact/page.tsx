@@ -28,7 +28,7 @@ const page = () => {
             </iframe>
 
             <Link href="/">
-                <div className="inline-block bg-blue-600 text-white text-lg font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-300 mt-6">
+                <div className="inline-block text-black border border-black text-lg font-semibold py-2 px-4 rounded-md hover:bg-gray-400 transition-colors duration-300 mt-6">
                     &lt;-- Go Back To Home
                     </div>
             </Link>
