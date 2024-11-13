@@ -45,7 +45,7 @@ const ProductPage: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredProducts.map((product: Product) => (
             <Link key={product._id} href={`/Products/${product._id}`}>
-              <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer hover:shadow-2xl hover:bg-gray-100">
+              <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer hover:shadow-2xl hover:bg-gray-100  border-[1px] border-black">
                 {product.item_Image && (
                   <img
                     src={`data:image/jpeg;base64,${product.item_Image}`}

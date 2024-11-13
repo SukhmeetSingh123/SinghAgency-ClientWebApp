@@ -24,7 +24,7 @@ const FeaturedProducts = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {featuredProducts.map((product) => (
                     <Link key={product._id} href={`/Products/${product._id}`}>
-                        <div className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer hover:shadow-xl">
+                        <div className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer hover:shadow-xl border-2 border-black">
                             {product.item_Image && (
                                 <img
                                     src={`data:image/jpeg;base64,${product.item_Image}`}
